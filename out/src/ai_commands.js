@@ -3,19 +3,19 @@ var {
     Position,
     workspace
 } = require('vscode');
-var launch = require('child_process').execFile;
-const spawn = require('child_process').spawn;
-var path = require('path');
+var launch        = require('child_process').execFile;
+var path          = require('path');
 var configuration = workspace.getConfiguration('autoit');
+const spawn       = require('child_process').spawn;
 
 // Executable paths
-const aiPath = configuration.aiPath;
+const aiPath      = configuration.aiPath;
 const wrapperPath = configuration.wrapperPath;
-const tidyPath = configuration.tidyPath;
-const checkPath = configuration.checkPath;
-const helpPath = configuration.helpPath;
-const infoPath = configuration.infoPath;
-const kodaPath = configuration.kodaPath;
+const tidyPath    = configuration.tidyPath;
+const checkPath   = configuration.checkPath;
+const helpPath    = configuration.helpPath;
+const infoPath    = configuration.infoPath;
+const kodaPath    = configuration.kodaPath;
 
 var aiOut = window.createOutputChannel('AutoIt');
 
@@ -82,7 +82,6 @@ module.exports = {
         procRunner(aiPath, [wrapperPath, '/ShowGui', '/prod', '/in', thisFile]);
     },
 
-
     tidyScript: () => {
         // Save the file
         window.activeTextEditor.document.save();
@@ -145,30 +144,46 @@ module.exports = {
 
 function procRunner(cmdPath, args) {
     aiOut.show(true);
+    let output = [];
+    const regex = /Press.Ctrl\+Alt\+Break.to.Restart.or.Ctrl\+Break.to.Stop/gim;
 
     // Set working directory to AutoIt script dir so that compile and build
     // commands work right
     var workDir = path.dirname(window.activeTextEditor.document.fileName);
+    var runner = spawn(cmdPath, args, {cwd: workDir});
 
-    var runner = spawn(cmdPath, args, {
-        cwd: workDir
-    });
+    aiOut.clear();
+    aiOut.appendLine('\r-------------- Beginning Run --------------\r\r');
 
+    /**
+     * output from running
+     */
     runner.stdout.on('data', (data) => {
-        var output = data.toString();
-        console.log(output);
-        aiOut.append(output);
+        output.push(data.toString()) ;
     });
 
+    /**
+     * output from error
+     */
     runner.stderr.on('data', (data) => {
-        var output = data.toString();
-        console.log(output);
-        aiOut.append(output);
+        var out = data.toString();
+        console.log(out);
+        aiOut.append(out);
     });
 
+    /**
+     * show output
+     */
     runner.on('exit', (code) => {
-        console.log(`Process exited with code ${code}`);
-        aiOut.appendLine(`Process exited with code ${code}`);
+        for (let i in output) {
+            if (output.hasOwnProperty(i)) {
+                if (regex.test(output[i])) {
+                    console.log(output[i++]);
+                    aiOut.append(output[i++]);
+                    aiOut.appendLine('\r\r--------------- Run Ended -----------------');
+                }
+            }
+        }
     });
 }
 
