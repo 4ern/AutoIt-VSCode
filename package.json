@@ -1,16 +1,16 @@
 {
-    "name": "autoit",
-    "displayName": "AutoIt",
-    "description": "AutoIt language extension for Visual Studio Code",
-    "icon": "img/ai_icon.png",
-    "version": "0.1.7",
-    "publisher": "Damien",
+    "name": "4ern",
+    "displayName": "AutoIt by 4ern",
+    "description": "AutoIt language extension for VSCode",
+    "version": "0.0.1",
+    "publisher": "4ern",
+    "icon": "img/logo.png",
     "galleryBanner": {
         "color": "#254768",
         "theme": "dark"
     },
     "engines": {
-        "vscode": "^0.10.1"
+        "vscode": "^1.5.0"
     },
     "categories": [
         "Languages",
@@ -26,26 +26,30 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/loganch/AutoIt-VSCode.git"
+        "url": "https://github.com/4ern/AutoIt-VSCode.git"
     },
-    "homepage": "https://github.com/loganch/AutoIt-VSCode/blob/master/README.md",
+    "homepage": "https://github.com/4ern/AutoIt-VSCode/blob/master/README.md",
     "contributes": {
-        "languages": [{
-            "id": "autoit",
-            "aliases": [
-                "AutoIt",
-                "autoit"
-            ],
-            "extensions": [
-                ".au3"
-            ],
-            "configuration": "./syntaxes/autoit-language-configuration.json"
-        }],
+        "languages": [
+            {
+                "id": "autoit",
+                "aliases": [
+                    "AutoIt",
+                    "autoit"
+                ],
+                "extensions": [
+                    ".au3"
+                ],
+                "configuration": "./syntaxes/autoit-language-configuration.json"
+            }
+        ],
         "menus": {
-            "commandPalette": [{
+            "commandPalette": [
+                {
                     "when": "editorLangId == autoit",
                     "command": "extension.runScript"
-                }, {
+                },
+                {
                     "when": "editorLangId == autoit",
                     "command": "extension.compile"
                 },
@@ -83,7 +87,8 @@
                 }
             ]
         },
-        "commands": [{
+        "commands": [
+            {
                 "command": "extension.runScript",
                 "title": "AutoIt: Run Script"
             },
@@ -124,16 +129,21 @@
                 "title": "AutoIt: Koda Form Designer"
             }
         ],
-        "grammars": [{
-            "language": "autoit",
-            "scopeName": "source.autoit",
-            "path": "./syntaxes/autoit.tmLanguage"
-        }],
-        "snippets": [{
-            "language": "autoit",
-            "path": "./snippets/autoit.json"
-        }],
-        "keybindings": [{
+        "grammars": [
+            {
+                "language": "autoit",
+                "scopeName": "source.autoit",
+                "path": "./syntaxes/autoit.tmLanguage"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "autoit",
+                "path": "./snippets/autoit.json"
+            }
+        ],
+        "keybindings": [
+            {
                 "command": "extension.runScript",
                 "key": "f5",
                 "when": "editorTextFocus && editorLangId == autoit"

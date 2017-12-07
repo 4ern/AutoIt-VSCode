@@ -3,8 +3,8 @@
 var { languages, SymbolInformation, SymbolKind, 
     Location, Position } = require('vscode')
 
-const _funcPattern = /Func\s(.+)\(/
-const _varPattern = /(\$\w+)/g
+const _funcPattern = /Func\s(.+)\(/gi
+const _varPattern = /(\$\w+)/gi
 
 module.exports = languages.registerDocumentSymbolProvider(
     { language: 'autoit', scheme: 'file' },

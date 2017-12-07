@@ -2,7 +2,7 @@
     "Case Block": {
         "prefix": "Case Block",
         "body": [
-            "Case ${1:value/expression}",
+            "case ${1:value/expression}",
             "\t${2:statement}"
         ],
         "scope": "source.autoit",
@@ -11,7 +11,7 @@
     "Case-Else Block": {
         "prefix": "Case-Else Block",
         "body": [
-            "Case Else",
+            "case else",
             "\t${1:statement}"
         ],
         "scope": "source.autoit",
@@ -20,9 +20,9 @@
     "Do Loop": {
         "prefix": "Do Loop",
         "body": [
-            "Do",
+            "do",
             "\t${1:statement(s)}",
-            "Until ${2:expression}"
+            "until ${2:expression}"
         ],
         "scope": "source.autoit",
         "description": "Loop based on an expression."
@@ -30,7 +30,7 @@
     "Else Block": {
         "prefix": "Else Block",
         "body": [
-            "Else",
+            "else",
             "\t${1:[else statement(s)]}"],
         "scope": "source.autoit",
         "description": "An Else block for an If statement"
@@ -38,9 +38,9 @@
     "For...In...Next": {
         "prefix": "For...In...Next",
         "body": [
-            "For \\$${1:vElement} In \\$${2:aArray}",
-            "\t${3:ConsoleWrite(\\$${1:vElement})}",
-            "Next"
+            "for \\$${1:velement} in \\$${2:aarray}",
+            "\t${3:consolewrite(\\$${1:velement})}",
+            "next"
         ],
         "scope": "source.autoit",
         "description": "Enumerates elements in an Object collection or an Array."
@@ -48,9 +48,9 @@
     "For...To...Step...Next": {
         "prefix": "For...To...Step...Next",
         "body": [
-            "For \\$${1:i} = ${2:0} To ${3:1} Step ${4:+${5:1}}",
-            "\t${6:ConsoleWrite(\\$${1:i})}",
-            "Next"
+            "for \\$${1:i} = ${2:0} to ${3:1} step ${4:+${5:1}}",
+            "\t${6:consolewrite(\\$${1:i})}",
+            "next"
         ],
         "scope": "source.autoit",
         "description": "Loop based on an expression."
@@ -58,26 +58,26 @@
     "Func...EndFunc": {
         "prefix": "Func...EndFunc",
         "body": [
-            "Func ${1:FunctionName}(${2:\\$${3:Param}})",
+            "func ${1:functionname}(${2:\\$${3:param}})",
             "\t${4}",
-            "\t${5:Return ${6:True}}",
-            "EndFunc"
+            "\t${5:return ${6:true}}",
+            "endfunc"
         ],
         "scope": "source.autoit",
         "description": "Function that takes zero or more arguments and optionally returns a result."
     },
     "If Block": {
         "prefix": "If Block",
-        "body": "If ${1:<expression>} Then\n\t${2:statement}\nEndIf",
+        "body": "if ${1:<expression>} then\n\t${2:statement}\nendif",
         "scope": "source.autoit",
         "description": "Single-line If block snippet"
     },
     "If...EndIf": {
         "prefix": "If...EndIf",
         "body": [
-            "If (${1:<expression>}) Then",
+            "if (${1:<expression>}) then",
             "\t${2:statement}",
-            "EndIf"
+            "endif"
         ],
         "scope": "source.autoit",
         "description": "Multi-line If block snippet"
@@ -85,14 +85,14 @@
     "Switch...EndSwitch": {
         "prefix": "Switch...EndSwitch",
         "body": [
-            "Switch (${1:\\$variable})",
-            "\tCase ${2:6 To 11}",
+            "switch (${1:\\$variable})",
+            "\tcase ${2:6 to 11}",
             "\t\t${3:true}",
-            "\tCase ${4:12 To 17}",
+            "\tcase ${4:12 to 17}",
             "\t\t${5:true}",
-            "\tCase Else",
+            "\tcase else",
             "\t\t${6:false}",
-            "EndSwitch"
+            "endswitch"
         ],
         "scope": "source.autoit",
         "description": "Switch block snippet"
@@ -106,9 +106,9 @@
     "While...WEnd": {
         "prefix": "While",
         "body": [
-            "While ( ${1:true} )",
+            "while ( ${1:true} )",
             "\t${2}",
-            "WEnd"
+            "wend"
         ],
         "scope": "source.autoit",
         "description": "While Loop snippet"
@@ -1256,7 +1256,7 @@
     },
     "EndRegion": {
         "prefix": "EndRegion",
-        "body": "#EndRegion ",
+        "body": "#endregion ",
         "scope": "source.autoit"
     },
     "forcedef": {
@@ -1282,9 +1282,9 @@
     "Region...EndRegion": {
         "prefix": "Region...EndRegion",
         "body": [
-            "#Region",
+            "#region",
             "\t${1}",
-            "#EndRegion"
+            "#endregion"
         ],
         "scope": "source.autoit"
     },
