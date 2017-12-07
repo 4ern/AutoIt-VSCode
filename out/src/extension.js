@@ -1,11 +1,11 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 var { languages, commands } = require('vscode');
-var ai_commands  = require("./ai_commands");
-var ai_hover = require('./ai_hover');
-var ai_completion = require('./ai_completion');
-var ai_symbols = require('./ai_symbols');
-var ai_signature = require('./ai_signature');
+var ai_commands             = require("./ai_commands");
+var ai_hover                = require('./ai_hover');
+var ai_completion           = require('./ai_completion');
+var ai_symbols              = require('./ai_symbols');
+var ai_signature            = require('./ai_signature');
 
 function activate(ctx) {
 

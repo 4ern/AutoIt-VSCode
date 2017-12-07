@@ -14,8 +14,8 @@ for (var i in files) {
     completions = completions.concat(newComp)
 }
 
-const _funcPattern = /Func\s+(\w*)\s*\(/g;
-const _varPattern = /\$(\w*)/g;
+const _funcPattern = /Func\s+(\w*)\s*\(/gi;
+const _varPattern = /\$(\w*)/gi;
 const _includePattern = /^\s+#include\s"(.+)"/gm
 
 module.exports = languages.registerCompletionItemProvider({ language: 'autoit', scheme: 'file' }, {
