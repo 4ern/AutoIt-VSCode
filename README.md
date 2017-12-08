@@ -1,9 +1,7 @@
 # AutoIt for Visual Studio Code
+This has been forked and developed from __[loganch](https://github.com/loganch/AutoIt-VSCode)__ release.
 
-Welcome to the AutoIt extension for Visual Studio Code! This has been forked 
-and developed from Damien122's release.
-
-[Features](#features) | [Configuration](#configuration) | [Keyboard Shortcuts](#keyboard-shortcuts) | [Contributing](#contributing)
+[Features](#features) | [Configuration](#configuration) | [Keyboard Shortcuts](#keyboard-shortcuts)
 
 ## Features
 
@@ -14,7 +12,7 @@ and developed from Damien122's release.
   
 * Launch, compile and build scripts from VSCode
 * Launch AutoIt Help for highlighted text 
-* Symbol search, press `Ctrl+Shift+O` to see where Functions and Variables have been declared in the current script
+* Symbol search, press `Ctrl+Shift+R` to see where Functions and Variables have been declared in the current file
 
   ![SymbolSearch](img/docs/symbolsearch.gif)  
 
@@ -31,14 +29,6 @@ By default, this extension is set up for the default installation of AutoIt and 
 |`autoit.infoPath`|Path to Au3Info Executable|"C:\\Program Files (x86)\\AutoIt3\\Au3Info.exe"|
 |`autoit.kodaPath`|Path to Koda Form Designer|"C:\\Program Files (x86)\\AutoIt3\\SciTE\\Koda\\FD.exe"|
 
-<!-- * Access the command palette `Ctrl+Shift+P`, type Preferences: Open User Settings or Preferences: Open Workspace Settings. -->
-
-  <!-- ![CtrlShiftP](img/docs/CtrlShiftP.png) -->
-
-<!-- * Configure the paths according to your AutoIt installation. -->
-
-  <!-- ![AutoItConfiguration](img/docs/AutoItConfiguration.png) -->
-
 ## Keyboard Shortcuts
 * Run Script: `F5`
 * AutoIt Check: `Ctrl+F5`
@@ -52,12 +42,3 @@ By default, this extension is set up for the default installation of AutoIt and 
 > **NOTE:**
 > 
 > Run, Compile and Build Script functions require the full install of [SciTE4AutoIt3](https://www.autoitscript.com/site/autoit-script-editor/downloads/) alongside AutoIt.
-
-## Contributing
-Check out the code, leave feedback and feature requests now on [GitHub/loganch](https://github.com/loganch/AutoIt-VSCode)
-
-Please fork the repository and contribute using pull requests.
-
----
-
-[Features](#features) | [Configuration](#configuration) | [Keyboard Shortcuts](#keyboard-shortcuts) | [Contributing](#contributing)

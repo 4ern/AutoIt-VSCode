@@ -102,7 +102,7 @@ module.exports = {
         window.setStatusBarMessage('Checking script...' + thisFile, 1500);
 
         // Launch the AutoIt Wrapper executable with the script's path
-        procRunner(checkPath, [thisFile]);
+        procRunner(checkPath, [thisFile], true);
     },
 
     buildScript: () => {
@@ -141,7 +141,7 @@ module.exports = {
     }
 };
 
-function procRunner(cmdPath, args) {
+function procRunner(cmdPath, args, au3Check = false) {
     aiOut.show(true);
     let output = [];
     const regex = /Press.Ctrl\+Alt\+Break.to.Restart.or.Ctrl\+Break.to.Stop/gim;
@@ -152,7 +152,6 @@ function procRunner(cmdPath, args) {
     var runner = spawn(cmdPath, args, {cwd: workDir});
 
     aiOut.clear();
-    aiOut.appendLine('\r-------------- Beginning Run --------------\r\r');
 
     /**
      * output from running
@@ -174,12 +173,26 @@ function procRunner(cmdPath, args) {
      * show output
      */
     runner.on('exit', (code) => {
+
+        /**
+         * if is au3
+         */
+        if (au3Check) {
+            out = output[0].replace(/(AutoIt3.Syntax.Checker).(v\d+.\d+.\d+.\d+.+)/g, '');
+            console.log(out);
+            aiOut.append(out);
+            return;
+        }
+
+        /**
+         * run au3
+         */
         for (let i in output) {
             if (output.hasOwnProperty(i)) {
                 if (regex.test(output[i])) {
+                    aiOut.appendLine('\r-------------- Beginning Run --------------\r\r');
                     console.log(output[i++]);
                     aiOut.append(output[i++]);
-                    aiOut.appendLine('\r\r--------------- Run Ended -----------------');
                 }
             }
         }

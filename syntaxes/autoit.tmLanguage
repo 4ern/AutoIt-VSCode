@@ -12,6 +12,21 @@
 	<array>
 
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.use.roma</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?i:;\s?use\s+?)([a-zA-Z-\/\\]+)</string>
+			<key>name</key>
+			<string>support.class</string>
+		</dict>
+
+		<dict>
 			<key>comment</key>
 			<string>Match Dollar Symbol</string>
 			<key>match</key>
@@ -41,13 +56,28 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>variable.other.constant.property</string>
+					<string>variable.other.property</string>
 				</dict>
 			</dict>
 			<key>match</key>
 			<string>(?:\.)([a-zA-Z]+)</string>
 			<key>name</key>
 			<string>punctuation</string>
+		</dict>
+
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.variable</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>\s*(\$)([a-zA-Z0-9_]+)\s*(?=\.)</string>
+			<key>name</key>
+			<string>variable.language.this</string>
 		</dict>
 
 		<dict>
@@ -109,12 +139,43 @@
 		</dict>
 
 		<dict>
-			<key>comment</key>
-			<string>Match für Include/NoTrayIcon/RequireAdmin</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>string.parameter.import.autoit</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin.import.autoit</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end.import.autoit</string>
+				</dict>
+			</dict>
 			<key>match</key>
-			<string>#\b(?i:include-once|include|notrayicon|requireadmin|onautoitstartregister)\b</string>
+			<string>#(?i:include)\s+((["'&lt;]).*(["'&gt;]))$</string>
 			<key>name</key>
-			<string>constant.character.preprocessor.autoit</string>
+			<string>keyword.control.import.autoit</string>
+		</dict>
+
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>string.parameter.directives.autoit</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>#\b(?i:include-once|notrayicon|onautoitstartregister|requireadmin|endregion|forcedef|forceref|ignorefunc|pragma|region)\b(.*)$</string>
+			<key>name</key>
+			<string>keyword.control.directives.autoit</string>
 		</dict>
 
 		<dict>
@@ -237,24 +298,6 @@
 
 		<dict>
 			<key>comment</key>
-			<string>Match Variable As Function</string>
-			<key>match</key>
-			<string>\s*((\$)[a-zA-Z0-9_]+)\s*(?=\()</string>
-			<key>name</key>
-			<string>variable.language.this</string>
-		</dict>
-
-		<dict>
-			<key>comment</key>
-			<string>Match this</string>
-			<key>match</key>
-			<string>\s*((\$)[a-zA-Z0-9_]+)\s*(?=\.)</string>
-			<key>name</key>
-			<string>variable.language.this</string>
-		</dict>
-
-		<dict>
-			<key>comment</key>
 			<string>Match Variable</string>
 			<key>match</key>
 			<string>s*((?:\$)[a-zA-Z0-9_]+)</string>
@@ -272,6 +315,7 @@
 		</dict>
 
 	</array>
+
 	<key>scopeName</key>
 	<string>source.autoit</string>
 	<key>uuid</key>
