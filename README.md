@@ -6,18 +6,13 @@ This has been forked and developed from __[loganch](https://github.com/loganch/A
 ## Features
 
 * AutoIt Syntax highlighting
-* IntelliSense (code hints and completion)
-
-  ![Intellisense](img/docs/signaturehelp.gif)
-  
+* IntelliSense (code hints and completion) 
 * Launch, compile and build scripts from VSCode
 * Launch AutoIt Help for highlighted text 
 * Symbol search, press `Ctrl+Shift+R` to see where Functions and Variables have been declared in the current file
 
-  ![SymbolSearch](img/docs/symbolsearch.gif)  
-
 ## Configuration
-By default, this extension is set up for the default installation of AutoIt and SciTe4AutoIt on a 64-bit system. For alternate setups, you can access the user settings by navigating to `File-> Preferences-> Settings` or invoking the command palette (`Ctrl+Shift+P`) and searching for Preferences [(example)](img/docs/CtrlShiftP.png), and changing the following options:
+By default, this extension is set up for the default installation of AutoIt and SciTe4AutoIt on a 64-bit system. For alternate setups, you can access the user settings by navigating to `File-> Preferences-> Settings` or invoking the command palette (`Ctrl+Shift+P`) and searching for Preferences, and changing the following options:
 
 |Config |Description|Default |
 |---|---|---|
