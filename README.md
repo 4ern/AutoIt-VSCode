@@ -1,6 +1,8 @@
 # AutoIt for Visual Studio Code
 This has been forked and developed from __[loganch](https://github.com/loganch/AutoIt-VSCode)__ release.
 
+![SymbolSearch](img/logo.png)
+
 [Features](#features) | [Configuration](#configuration) | [Keyboard Shortcuts](#keyboard-shortcuts)
 
 ## Features
