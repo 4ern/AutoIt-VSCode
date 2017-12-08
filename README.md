@@ -1,9 +1,15 @@
 # AutoIt for Visual Studio Code
 This has been forked and developed from __[loganch](https://github.com/loganch/AutoIt-VSCode)__ release.
 
-![SymbolSearch](img/logo.png)
+![logo](img/logo.png)
 
 [Features](#features) | [Configuration](#configuration) | [Keyboard Shortcuts](#keyboard-shortcuts)
+
+## Screenshots
+
+![Syntax](img/docs/syntax.png)
+---
+![SymbolSearch](img/docs/symbols.png)
 
 ## Features
 
@@ -11,7 +17,7 @@ This has been forked and developed from __[loganch](https://github.com/loganch/A
 * IntelliSense (code hints and completion) 
 * Launch, compile and build scripts from VSCode
 * Launch AutoIt Help for highlighted text 
-* Symbol search, press `Ctrl+Shift+R` to see where Functions and Variables have been declared in the current file
+* Symbol search, press `Ctrl+Shift+R` to see where Functions have been declared in the current file
 
 ## Configuration
 By default, this extension is set up for the default installation of AutoIt and SciTe4AutoIt on a 64-bit system. For alternate setups, you can access the user settings by navigating to `File-> Preferences-> Settings` or invoking the command palette (`Ctrl+Shift+P`) and searching for Preferences, and changing the following options:

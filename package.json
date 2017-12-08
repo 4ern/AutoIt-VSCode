@@ -2,7 +2,7 @@
     "name": "4ern",
     "displayName": "AutoIt by 4ern",
     "description": "AutoIt language extension for VSCode",
-    "version": "0.0.1",
+    "version": "0.1.1",
     "publisher": "4ern",
     "icon": "img/logo.png",
     "galleryBanner": {
@@ -233,5 +233,10 @@
     },
     "dependencies": {
         "merge-json": "0.1.0-b.3"
+    },
+    "__metadata": {
+        "id": "b44cc286-d183-40f0-a95d-a83b3c63ac40",
+        "publisherDisplayName": "4ern",
+        "publisherId": "a7aa2707-7096-44a3-9fdc-c0f59e42365a"
     }
 }
