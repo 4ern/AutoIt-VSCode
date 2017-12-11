@@ -7,7 +7,8 @@ This has been forked and developed from __[loganch](https://github.com/loganch/A
 
 ## Screenshots
 
-![Syntax](img/docs/syntax.png)
+![Syntax](img/docs/syntax_1.png)
+![Syntax](img/docs/syntax_2.png)
 ---
 ![SymbolSearch](img/docs/symbols.png)
 

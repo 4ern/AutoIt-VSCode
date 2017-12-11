@@ -193,6 +193,7 @@ function procRunner(cmdPath, args, au3Check = false) {
                     aiOut.appendLine('\r-------------- Beginning Run --------------\r\r');
                     console.log(output[i++]);
                     aiOut.append(output[i++]);
+                    aiOut.appendLine('\r-------------- Stop --------------\r\r');
                 }
             }
         }
